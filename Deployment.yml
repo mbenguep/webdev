@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: Web_dev
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: Web_dev
+    spec:
+      containers:
+      - name: Web_dev
+        image: registry.gitlab.com/Pmbengue/Web_dev
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: registry.gitlab.com
