@@ -5,14 +5,14 @@ volumes:
 
 services:
   config-server:2.2.7
-    image: registry.gitlab.com/Pmbengue/spring-petclinic-microservices/spring-petclinic-config-server:2.2.7
+    image: registry.gitlab.com/gnamsacode/web_dev/spring-petclinic-config-server:2.2.7
     container_name: config-server
     mem_limit: 512M
     ports:
      - 8888:8888
 
   discovery-server:2.2.7
-    image: registry.gitlab.com/Pmbengue/spring-petclinic-microservices/spring-petclinic-discovery-server:2.2.7
+    image: registry.gitlab.com/gnamsacode/web_dev/spring-petclinic-discovery-server:2.2.7
     container_name: discovery-server
     mem_limit: 512M
     depends_on:
