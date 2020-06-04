@@ -1,12 +1,15 @@
-image: java:8
+image: docker:latest
 services:
   - docker:dind
- stages:
+
+stages:
   - build
-  
-  build:
+
+build:
+  image: maven:3-jdk-8
   stage: build
-  script: ./mvnw package
+  script:
+    - ./mvnw package
   artifacts:
     paths:
-      - target/demo-0.0.1-SNAPSHOT.jar
+      - build/libs/*.jar
