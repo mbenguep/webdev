@@ -1,0 +1,24 @@
+version: '2'
+
+volumes:
+  graf-data:
+
+services:
+  config-server:2.2.7
+    image: registry.gitlab.com/Pmbengue/spring-petclinic-microservices/spring-petclinic-config-server:2.2.7
+    container_name: config-server
+    mem_limit: 512M
+    ports:
+     - 8888:8888
+
+  discovery-server:2.2.7
+    image: registry.gitlab.com/Pmbengue/spring-petclinic-microservices/spring-petclinic-discovery-server:2.2.7
+    container_name: discovery-server
+    mem_limit: 512M
+    depends_on:
+      - config-server
+    entrypoint: ["./dockerize","-wait=tcp://config-server:8888","-timeout=120s","--","java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+    ports:
+     - 8761:8761
+
+...
