@@ -1,7 +1,17 @@
 image: docker:latest
 services:
   - docker:dind
-
+  - mysql:latest
+  
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: docker,localstorage
+  MYSQL_ROOT_PASSWORD: admin
+  MYSQL_DATABASE: webdev
+  MYSQL_USER: root
+  MYSQL_PASSWORD: 
+  SPRING_DATASOURCE_URL: jdbc:mysql://localhost/webdev
+  
 stages:
   - build
   
