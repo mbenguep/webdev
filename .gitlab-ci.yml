@@ -4,11 +4,11 @@ services:
   - mysql:latest
   
 variables:
-  MYSQL_ROOT_PASSWORD: admin
-  MYSQL_DATABASE: webdev
-  MYSQL_USER: root
-  MYSQL_PASSWORD: 
-  SPRING_DATASOURCE_URL: jdbc:mysql://localhost/webdev
+  - MYSQL_ROOT_PASSWORD: admin
+  - MYSQL_DATABASE: webdev
+  - MYSQL_USER: root
+  - MYSQL_PASSWORD: 
+  - SPRING_DATASOURCE_URL: jdbc:mysql://localhost/webdev
   
 stages:
   - build
