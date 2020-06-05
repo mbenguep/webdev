@@ -4,11 +4,13 @@ services:
   - mysql:latest
   
 variables:
-  - MYSQL_ROOT_PASSWORD: admin
-  - MYSQL_DATABASE: webdev
-  - MYSQL_USER: root
-  - MYSQL_PASSWORD: 
-  - SPRING_DATASOURCE_URL: jdbc:mysql://localhost/webdev
+  DOCKER_DRIVER: "overlay"
+  SPRING_PROFILES_ACTIVE: "docker","localstorage"
+  MYSQL_ROOT_PASSWORD: "admin"
+  MYSQL_DATABASE: "webdev"
+  MYSQL_USER: "root"
+  MYSQL_PASSWORD: ""
+  SPRING_DATASOURCE_URL: "jdbc:mysql://localhost:3306/webdev"
   
 stages:
   - build
