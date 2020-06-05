@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM openjdk:13-alpine
+=======
+FROM openjdk:8-jre-alpine
+>>>>>>> 5e511b4... Adds Dokerfile
 
 VOLUME /tmp
 
