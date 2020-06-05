@@ -4,8 +4,6 @@ services:
   - mysql:latest
   
 variables:
-  DOCKER_DRIVER: overlay
-  SPRING_PROFILES_ACTIVE: docker,localstorage
   MYSQL_ROOT_PASSWORD: admin
   MYSQL_DATABASE: webdev
   MYSQL_USER: root
