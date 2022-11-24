@@ -40,7 +40,7 @@ node{
 }
 
 
-    stage('Deploy the onto openshift'){
+    stage('create service onto openshift'){
         // getting maven home path
 
     sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
@@ -49,18 +49,19 @@ node{
     removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
 }
-}
- /**   stage('create service onto openshift'){
+
+   stage('create service onto openshift'){
         // getting maven home path
 
     sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
-    execCommand: 'ansible-playbook -i /opt/docker/inventory /opt/docker/kube_route.yml', execTimeout: 3000000, flatten: false, 
+    execCommand: 'ansible-playbook -i /opt/docker/inventory /opt/docker/webdev_route.yml', execTimeout: 3000000, flatten: false, 
     makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, 
     removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
 }
+}
 
-    stage('creating route to access the App'){
+    /** stage('creating route to access the App'){
         // getting maven home path
 
     sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
