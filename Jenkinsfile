@@ -28,7 +28,7 @@ node{
         useWorkspaceInPromotion: false, verbose: false)])
 
 }
-}
+
     stage('Deploy the onto openshift'){
         // getting maven home path
 
@@ -37,6 +37,7 @@ node{
         makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, 
         removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
+}
 }
 
   /**  stage('Deploy the onto openshift'){
