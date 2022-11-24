@@ -2,7 +2,7 @@ node{
     stage('Checkout'){
 
 
-        git 'https://github.com/mbenguep/mavenApp.git'
+        git 'https://github.com/mbenguep/webdev.git'
     }
 
     stage('Clean Package') {
@@ -22,13 +22,13 @@ node{
 
         sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
         execCommand: '''cd /opt/docker;
-        ansible-playbook create_image.yml''', execTimeout: 900000000, flatten: false, makeEmptyDirs: false, 
+        ansible-playbook webdev_image.yml''', execTimeout: 900000000, flatten: false, makeEmptyDirs: false, 
         noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//opt//docker', remoteDirectorySDF: false, 
-        removePrefix: 'webapp/target', sourceFiles: 'webapp/target/*.war')], usePromotionTimestamp: false, 
+        removePrefix: '/target', sourceFiles: 'webapp/target/*.war')], usePromotionTimestamp: false, 
         useWorkspaceInPromotion: false, verbose: false)])
 
 }
-    stage('Deploy the onto openshift'){
+/**    stage('Deploy the onto openshift'){
         // getting maven home path
 
     sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
@@ -76,5 +76,5 @@ node{
     makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, 
     removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
-}
+}**//
 }
