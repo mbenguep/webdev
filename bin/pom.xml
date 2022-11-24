@@ -12,14 +12,11 @@
 	<groupId>com.first.app</groupId>
 	<artifactId>Web_dev</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>Web_dev</name>
 	<description>Demo project for Spring Boot</description>
-	
+
 	<properties>
 		<java.version>1.8</java.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
- 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -50,7 +47,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -67,54 +64,15 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	
-		
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.2.0.Final</version>
-		</dependency>        
-		<dependency>
-			<groupId>org.hibernate.common</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>4.0.1.Final</version>
-			<classifier>tests</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
-		</dependency>      
-		
 	</dependencies>
 
 	<build>
-		<finalName>webdev</finalName>
 		<plugins>
-		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<configuration>  
-			<skipTests>true</skipTests>  
-			</configuration>
-		</plugin>
-
-
 		</plugins>
 	</build>
-
 
 </project>

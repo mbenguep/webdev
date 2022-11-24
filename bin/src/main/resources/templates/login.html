@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: center;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+    }
+    input[type=radio] {
+        margin-left: 45px;
+    }
+    input[type=checkbox] {
+        margin-right: 190px;
+    }  
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+ <h1>Login Page</h1>
+ <p th:if="${error}" class="error">Invalid Username/Password</p>
+ <form th:action="@{/login}" th:object="${login}" method="post">
+  <label for="username">Username</label> 
+  <input type="text" id="username" name="username" autofocus="autofocus" />
+  <br /> 
+  <label for="password">Password</label> 
+  <input type="password" id="password" name="password" />
+  <br /> 
+  <input type="submit" value="Log In" />
+ </form>
+
+</body>
+</html>
